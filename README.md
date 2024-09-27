@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Getting Started with Cassie Eats
+
+## step1 : assign this to Cassie
+## step2 : order from Cassie Eats
+## step3 : have a nice meal 
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
