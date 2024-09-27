@@ -1,13 +1,10 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: white; /* 白ベースの背景 */
+  font-family: 'Comic Sans MS', sans-serif; /* フォントはComic Sans */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+  font-size: 32pt; /* pタグのフォントサイズは32pt */
 }
+
+/* imgのアニメーションはApp.cssで管理されるため、削除 */

@@ -1,5 +1,5 @@
 import React from 'react';
-import newImage from './images/cassies-app.png';
+import newImage from './images/cassies-app2.png';
 import './App.css';
 
 function App() {
@@ -9,8 +9,7 @@ function App() {
         <img src={newImage} className="App-logo" alt="new" />
         <p>
           Incoming New App : Cassie Eats
-        </p>
-        <p>
+          <br></br>
           Assignee : Cassie
         </p>
       </header>

@@ -5,27 +5,31 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  position: absolute; /* 絶対位置を設定 */
+  left: 0; /* 初期位置を左端に設定 */
+  animation: App-logo-spin 1s infinite linear, move 5s infinite linear; /* 回転と移動のアニメーション */
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin 1s infinite linear, move 5s infinite linear; /* 回転と移動のアニメーション */
   }
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white; /* 背景を白に変更 */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(255, 130, 174); /* 文字色も調整 */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* フォントをComic Sansに変更 */
 }
 
 .App-link {
-  color: #61dafb;
+  color: #f093a2;
 }
 
 @keyframes App-logo-spin {
@@ -34,5 +38,17 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0); /* 初期位置を左端に設定 */
+  }
+  50% {
+    transform: translateX(calc(100vw - 40vmin)); /* 右端に移動 */
+  }
+  100% {
+    transform: translateX(0); /* 左端に戻る */
   }
 }
