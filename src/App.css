@@ -1,19 +1,24 @@
 .App {
   text-align: center;
+  position: relative; /* 相対位置を設定 */
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-  position: absolute; /* 絶対位置を設定 */
-  left: 0; /* 初期位置を左端に設定 */
-  animation: App-logo-spin 1s infinite linear, move 5s infinite linear; /* 回転と移動のアニメーション */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin 1s infinite linear, move 5s infinite linear; /* 回転と移動のアニメーション */
-  }
+.App-moving {
+  animation: move 5s infinite linear; /* 左右に動くアニメーション */
+  position: absolute; /* 絶対位置を設定 */
+  top: 50%; /* 垂直中央に配置 */
+  transform: translateY(-50%); /* 垂直中央に調整 */
+}
+
+.App-square {
+  height: 40vmin; /* 2つ目の画像のサイズ */
+  position: absolute; /* 絶対位置を設定 */
+  animation: moveSquare 10s infinite linear; /* 四角で移動するアニメーション */
 }
 
 .App-header {
@@ -32,23 +37,37 @@
   color: #f093a2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes move {
+  0% {
+    left: 0; /* 左端 */
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    left: calc(100vw - 40vmin); /* 右端 */
+  }
+  100% {
+    left: 0; /* 左端に戻る */
   }
 }
 
-@keyframes move {
+@keyframes moveSquare {
   0% {
-    transform: translateX(0); /* 初期位置を左端に設定 */
+    top: 0;
+    left: 0; /* 左上 */
+  }
+  25% {
+    top: 0;
+    left: calc(100vw - 40vmin); /* 右上 */
   }
   50% {
-    transform: translateX(calc(100vw - 40vmin)); /* 右端に移動 */
+    top: calc(100vh - 40vmin); /* 右下 */
+    left: calc(100vw - 40vmin);
+  }
+  75% {
+    top: calc(100vh - 40vmin);
+    left: 0; /* 左下 */
   }
   100% {
-    transform: translateX(0); /* 左端に戻る */
+    top: 0; /* 左上に戻る */
+    left: 0;
   }
 }
